@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Layer = styled.div`
    
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0,0,0,0.5);
     position: absolute;
     left: 0;
@@ -16,14 +16,75 @@ export const Layer = styled.div`
 `;
 
 export const BoxInfo = styled.div`
-
-    width: 90%;
+    
+    width:90%;
     height: 90%;
     margin: auto;
+    padding: 20px 50px;
     background-color: white;
     border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
 
-`;
+`
+
+export const CloseBoxInfo = styled.div`
+
+    width: 30px;
+    height: 30px;
+    border: 3px solid #cecece;
+    border-radius: 4px;
+
+`
+
+export const InputSearch = styled.input`
+
+   background-color: #cecece;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   margin-top: 10px;
+
+`
+
+export const WrapperItemBoxInfo = styled.div`
+   
+   width: 100%;
+   margin: 0 10px; 
+   display: flex;
+   flex-direction: row;
+   margin-top: 20px;
+   
+`
+export const InfoItem = styled.div`
+
+   width: 20%;
+   padding: 10px 5px;
+
+
+` 
+
+export const ItemBoxItem = styled.div`
+
+  width: 100%;
+  margin: 0 10px; 
+  display: flex;
+  flex-direction: row;
+  background-color: #cecece;
+  border-radius: 10px;
+  
+
+`
+
+export const ItemFinance = styled.div`
+  
+   width: 20%;
+   padding: 10px;
+   
+   
+`
 
 export const MainStyle = styled.main`
 
@@ -91,6 +152,6 @@ export const StatusItem = styled.div`
 
   padding: 5px 35px;
   border-radius: 30px;
-  background-color: green;
+  background-color: ${(props) => props.background};
 
 `;

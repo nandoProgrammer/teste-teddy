@@ -15,7 +15,7 @@ const data = [
                 status: 0
             },
             {
-                nome: 'Balancete 2020U',
+                nome: 'Balancete 2020',
                 status: 1
             },
         ]
