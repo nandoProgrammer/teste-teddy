@@ -41,7 +41,7 @@ const Main = () => {
         <Layer display={modalStatus}>
             <BoxInfo>
               <Row content={'space-between'}>
-                <Row>
+                <Row align={'center'}>
                   <RoundedItem width={'70'} height={'70'}>
                   <i class="fas fa-database"></i>
                   </RoundedItem>
@@ -176,7 +176,7 @@ const Main = () => {
         </Layer>
         <MainStyle>
             <Row content={'space-between'}>
-              <Column width={'30%'}>
+              <Column width={'30%'} padding={'30px 0 0 0'}>
                    <Title>Informações da Solicitação</Title>
                    <List>
                       <li>
@@ -197,7 +197,7 @@ const Main = () => {
                    </List>
               </Column>
               <DocumentsBox> 
-                  <Row content={'flex-end'}>
+                  <Row content={'flex-end'} align={'center'}>
                     <Button onClick={openModal} background={'#e07126'}>Aceitar Open Finance</Button> 
                     <ButtonRounded>
                       <i class="fas fa-question"></i>

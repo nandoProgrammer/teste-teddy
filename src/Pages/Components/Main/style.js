@@ -20,9 +20,9 @@ export const BoxInfo = styled.div`
     width: 90%;
     height: auto;
     margin: auto;
-    padding: 20px 50px;
+    padding: 50px 50px;
     background-color: white;
-    border-radius: 30px;
+    border-radius: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -110,9 +110,10 @@ export const SelectItem = styled.select`
    
    max-width: 100px;
    max-height:50px;
-   padding: 0 10px;
+   padding: 5px 10px;
    border-radius: 20px;
    margin:0 10px;
+   border: none;
 
 `
 
@@ -167,6 +168,11 @@ export const Item = styled.div`
   background-color: #e9eff2;
   border-radius: 5px;
   margin: 10px 0;
+
+  span{
+    font-weight: bold;
+    color: #565c5b;
+  }
 
 `
 

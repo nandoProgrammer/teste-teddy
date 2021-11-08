@@ -13,8 +13,8 @@ export const Row = styled.div`
    flex-direction: row;
    justify-content: ${(props) => props.content};
    width: ${(props) => props.width};
-   align-items: center;
    padding: ${(props) => props.padding};
+   align-items: ${(props) => props.align};
 
 `
 
@@ -26,6 +26,7 @@ export const Column = styled.div`
    width:100%;
    justify-content: ${(props) => props.content};
    width: ${(props) => props.width};
+   padding: ${(props) => props.padding};
 
 `
 
@@ -105,7 +106,7 @@ export const ButtonRounded = styled.button`
 
 export const Title = styled.h2`
   
-   color: #051642;
+   color: #1c3b7a;
 
 `
 
