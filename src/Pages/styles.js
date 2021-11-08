@@ -27,6 +27,7 @@ export const Column = styled.div`
    justify-content: ${(props) => props.content};
    width: ${(props) => props.width};
    padding: ${(props) => props.padding};
+   border-left: ${(props) => props.borderLeft};
 
 `
 
@@ -37,7 +38,6 @@ export const RoundedItem = styled.div`
    border-radius: 50%;
    background-color: #e07126;
    margin-right: 10px;
-   box-shadow: 1px 1px 20px #cecece;
    position: relative;
 
    i{
@@ -61,7 +61,6 @@ export const BoxRounded = styled.div`
    color: #fff;
    margin: 0 10px;
    font-size: 15px;
-   box-shadow: 1px 1px 20px #cecece;
 
 `;
 
@@ -75,7 +74,6 @@ export const Button = styled.button`
    color: #fff;
    margin: 0 10px;
    font-size: 15px;
-   box-shadow: 1px 1px 20px #cecece;
 
    &:hover{
       opacity: 0.5;
@@ -93,7 +91,6 @@ export const ButtonRounded = styled.button`
    border-radius: 30px;
    border: 0;
    color: #fff;
-   box-shadow: 1px 1px 20px #cecece;
    margin: 10px 5px;
    
 
@@ -116,5 +113,16 @@ export const SubTitle = styled.h4`
    font-weight: 400;
 
 `
+
+export const LineVertical = styled.div`
+
+   width: 2px;
+   background-color: #cecece;
+   border-radius: 60px;
+   height: ${(props) => props.height};
+   margin: ${(props) => props.margin}
+    
+
+`;
 
 

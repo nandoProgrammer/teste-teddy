@@ -9,19 +9,30 @@ import {
   BoxOpenFinanceItems,
   Layer, 
   InputSearch, 
-  WrapperItemBoxInfo, 
+  WrapperAjust,
+  InfoText,
   ItemBoxItem,
   ItemFinance, 
   InfoItem,  
-  Item, 
-  BoxItemsStatus, 
+  Item,
   SelectItem,
   StatusItem,
   IconStatusItem, 
-  List 
+  List,
+  ButtonNavigation
 } from './style';
 
-import { Row, Column, Button,  ButtonRounded, RoundedItem, BoxRounded, Title, SubTitle } from '../../styles';
+import { 
+   Row,
+   Column, 
+   Button,  
+   ButtonRounded, 
+   RoundedItem,
+   BoxRounded, 
+   Title, 
+   SubTitle, 
+   LineVertical 
+} from '../../styles';
 
 import data from '../../../data';
 
@@ -57,23 +68,27 @@ const Main = () => {
               <BoxOpenFinanceItems>
                 <h4>Buscar por nome</h4>
                 <InputSearch placeholder='Digite o nome da instituição'/>
-                <WrapperItemBoxInfo>
+                <WrapperAjust width={'100%'} margin={'0 10px'}>
                    <InfoItem>
-                     Remetente
+                     <InfoText>Remetente</InfoText>
+                     <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem>
-                     Destinatário
+                     <InfoText>Destinatário</InfoText>
+                     <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem>
-                     Data da criação
+                     <InfoText>Data da criação</InfoText>
+                     <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem>
-                     Status
+                     <InfoText>Status</InfoText>
+                     <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem>
-                     Ações
+                     <InfoText>Ações</InfoText>
                    </InfoItem>
-                </WrapperItemBoxInfo>
+                </WrapperAjust>
                 <ItemBoxItem>
                   <ItemFinance>
                     <RoundedItem width={'30'} height={'30'}>
@@ -145,7 +160,7 @@ const Main = () => {
                 </ItemBoxItem>
               </BoxOpenFinanceItems>
               <Row content={'space-between'} padding={'20px 0'}>
-                <Row>
+                <Row align={'center'}>
                   <span>Resultados:</span>
                   <SelectItem>
                     <option>1-10</option>
@@ -161,16 +176,16 @@ const Main = () => {
                   </SelectItem>
                   <span>De 16</span>
                 </Row>
-                <Row>
-                  <span> anterior </span>
+                <Row align={'center'}>
+                  <ButtonNavigation> <i class="fas fa-chevron-left"></i> anterior </ButtonNavigation>
                   <ButtonRounded />
                   <ButtonRounded />
-                  <span> próximo </span>
+                  <ButtonNavigation> próximo <i class="fas fa-chevron-right"></i> </ButtonNavigation>
                 </Row>
                 
               </Row>
               <Row content={'flex-end'}>
-                <Button background={'#007bff'}>Agendar com outra instituição</Button>
+                <Button background={'#1c3b7a'}>Agendar com outra instituição</Button>
               </Row>
             </BoxInfo>
         </Layer>
@@ -196,7 +211,7 @@ const Main = () => {
                       </li>
                    </List>
               </Column>
-              <DocumentsBox> 
+              <Column width={'70%'} padding={'2% 0 0 2%'} borderLeft={'1px solid #ede8e6'}> 
                   <Row content={'flex-end'} align={'center'}>
                     <Button onClick={openModal} background={'#e07126'}>Aceitar Open Finance</Button> 
                     <ButtonRounded>
@@ -205,11 +220,14 @@ const Main = () => {
                   </Row>
                   <Column>
                     <Title>Documentos Solicitados</Title>
-                    <BoxItemsStatus>
-                        <WrapperItem>
-                            <span>Documento</span>
-                            <span>Status</span>
-                        </WrapperItem>
+                    <Column padding={'30px 0 0 0'}>
+                        <WrapperAjust width={'100%'} padding={'0 110px 0 30px'}>
+                            <InfoText>Documento</InfoText>
+                            <Row align={'center'}>
+                              <LineVertical height={'20px'} margin={'0 10px 0 0'} />
+                              <InfoText>Status</InfoText>
+                            </Row>
+                        </WrapperAjust>
                         <Column>
                             {
                               
@@ -253,9 +271,9 @@ const Main = () => {
                               ))
                             }
                         </Column>
-                    </BoxItemsStatus>    
+                    </Column>    
                 </Column>
-              </DocumentsBox> 
+              </Column> 
             </Row>
         </MainStyle>
         </>

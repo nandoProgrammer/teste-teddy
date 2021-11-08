@@ -47,6 +47,10 @@ export const CloseBoxInfo = styled.div`
       transform: translate(-50%, -50%);
    }
 
+   &:hover{
+     cursor: pointer;
+   }
+
 `
 
 export const InputSearch = styled.input`
@@ -68,19 +72,31 @@ export const BoxOpenFinanceItems = styled.div`
 
 `
 
-export const WrapperItemBoxInfo = styled.div`
+export const WrapperAjust = styled.div`
    
-   width: 100%;
-   margin: 0 10px; 
+   width: ${(props) => props.width};
+   padding: ${(props) => props.padding};
    display: flex;
    flex-direction: row;
+   justify-content: space-between;
    margin-top: 40px;
-   
+
 `
+
+export const InfoText = styled.h4`
+
+   color: #1c3b7a;
+
+`
+
 export const InfoItem = styled.div`
 
    width: 20%;
-   padding: 10px 5px;
+   padding: 10px 15px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
 
 ` 
 
@@ -110,6 +126,7 @@ export const SelectItem = styled.select`
    
    max-width: 100px;
    max-height:50px;
+   background-color: #cecece;
    padding: 5px 10px;
    border-radius: 20px;
    margin:0 10px;
@@ -176,13 +193,6 @@ export const Item = styled.div`
 
 `
 
-export const BoxItemsStatus = styled.div`
-
-  margin-top: 30px;
-  width: 100%;
-
-`
-
 export const StatusItem = styled.div`
   
   display: flex;
@@ -209,6 +219,25 @@ export const IconStatusItem = styled.div`
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+   }
+
+`
+
+export const ButtonNavigation = styled.button`
+
+   margin: 0 10px;
+   padding: 10px 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   max-width: 121px;
+   border: 0;
+   border-radius: 20px;
+   background: none;
+   align-items: center;
+
+   i{
+     margin: 0 10px;
    }
 
 `
