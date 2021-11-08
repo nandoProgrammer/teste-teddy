@@ -38,7 +38,7 @@ const Main = () => {
 
     return (
         <>
-        <Layer onClick={closeModal} display={modalStatus}>
+        <Layer display={modalStatus}>
             <BoxInfo>
               <Row content={'space-between'}>
                 <Row>
