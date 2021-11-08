@@ -6,6 +6,6 @@ export const HeaderTop = styled.header`
     flex-direction: row;
     justify-content: space-between;
     padding: 2% 0;
-    border-bottom: 1px solid #cecece;
+    border-bottom: 1px solid #ede8e6;
 
 `

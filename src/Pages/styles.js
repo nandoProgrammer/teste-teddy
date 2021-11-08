@@ -13,6 +13,8 @@ export const Row = styled.div`
    flex-direction: row;
    justify-content: ${(props) => props.content};
    width: ${(props) => props.width};
+   align-items: center;
+   padding: ${(props) => props.padding};
 
 `
 
@@ -29,23 +31,50 @@ export const Column = styled.div`
 
 export const RoundedItem = styled.div`
 
-   width: 60px;
-   height: 60px;
+   width: ${(props) => props.width}px;
+   height: ${(props) => props.height}px;
    border-radius: 50%;
-   background-color: orange;
+   background-color: #e07126;
    margin-right: 10px;
+   box-shadow: 1px 1px 20px #cecece;
+   position: relative;
+
+   i{
+      font-size: 30px;
+      color: #fff;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+   }
 
 `
+
+export const BoxRounded = styled.div`
+
+   width: ${(props) => props.width}px;
+   height: ${(props) => props.height}px;
+   background-color: ${(props) => props.background};
+   border-radius: 30px;
+   border: 0;
+   color: #fff;
+   margin: 0 10px;
+   font-size: 15px;
+   box-shadow: 1px 1px 20px #cecece;
+
+`;
 
 export const Button = styled.button`
    
    width: 300px;
    height: 50px;
-   background-color: orange;
+   background-color: ${(props) => props.background};
    border-radius: 30px;
    border: 0;
    color: #fff;
    margin: 0 10px;
+   font-size: 15px;
+   box-shadow: 1px 1px 20px #cecece;
 
    &:hover{
       opacity: 0.5;
@@ -59,15 +88,31 @@ export const ButtonRounded = styled.button`
    
    width: 50px;
    height: 50px;
-   background-color: orange;
+   background-color: #e07126;
    border-radius: 30px;
    border: 0;
    color: #fff;
+   box-shadow: 1px 1px 20px #cecece;
+   margin: 10px 5px;
+   
 
    &:hover{
       opacity: 0.5;
       cursor: pointer;
    }
+
+`
+
+export const Title = styled.h2`
+  
+   color: #051642;
+
+`
+
+export const SubTitle = styled.h4`
+
+   color: #878482;
+   font-weight: 400;
 
 `
 

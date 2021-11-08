@@ -6,6 +6,7 @@ import {
   CloseBoxInfo, 
   DocumentsBox, 
   WrapperItem, 
+  BoxOpenFinanceItems,
   Layer, 
   InputSearch, 
   WrapperItemBoxInfo, 
@@ -14,11 +15,13 @@ import {
   InfoItem,  
   Item, 
   BoxItemsStatus, 
-  StatusItem, 
+  SelectItem,
+  StatusItem,
+  IconStatusItem, 
   List 
 } from './style';
 
-import { Row, Column, Button, ButtonRounded, RoundedItem } from '../../styles';
+import { Row, Column, Button,  ButtonRounded, RoundedItem, BoxRounded, Title, SubTitle } from '../../styles';
 
 import data from '../../../data';
 
@@ -35,19 +38,23 @@ const Main = () => {
 
     return (
         <>
-        <Layer display={modalStatus}>
+        <Layer onClick={closeModal} display={modalStatus}>
             <BoxInfo>
               <Row content={'space-between'}>
                 <Row>
-                  <RoundedItem />
+                  <RoundedItem width={'70'} height={'70'}>
+                  <i class="fas fa-database"></i>
+                  </RoundedItem>
                   <div>
-                      <h1>Solicitação</h1>
-                      <span>Visualize e envie a documentação solicitada</span>
+                      <Title>Open Finance</Title>
+                      <SubTitle>Meus compartilhamentos com instituições</SubTitle>
                   </div>
                 </Row>
-                <CloseBoxInfo onClick={closeModal}></CloseBoxInfo>
+                <CloseBoxInfo onClick={closeModal}>
+                <i class="fas fa-times"></i>
+                </CloseBoxInfo>
               </Row>
-              <Column>
+              <BoxOpenFinanceItems>
                 <h4>Buscar por nome</h4>
                 <InputSearch placeholder='Digite o nome da instituição'/>
                 <WrapperItemBoxInfo>
@@ -69,26 +76,78 @@ const Main = () => {
                 </WrapperItemBoxInfo>
                 <ItemBoxItem>
                   <ItemFinance>
-                    Nubank
+                    <RoundedItem width={'30'} height={'30'}>
+                      
+                    </RoundedItem>
+                    <span>Nubank</span>
                   </ItemFinance>
                   <ItemFinance>
-                    Nubank
+                    <RoundedItem width={'30'} height={'30'}>
+                      
+                    </RoundedItem>
+                    Teddy Investimentos
                   </ItemFinance>
                   <ItemFinance>
-                    Nubank
+                    27/07/2021
                   </ItemFinance>
                   <ItemFinance>
-                    Nubank
+                    <BoxRounded width={'150'} height={'32'} background={'#e07126'}></BoxRounded>
                   </ItemFinance>
                   <ItemFinance>
-                    Nubank
+                    <RoundedItem width={'30'} height={'30'}></RoundedItem>
                   </ItemFinance>
                 </ItemBoxItem>
-              </Column>
-              <Row content={'space-between'}>
+                <ItemBoxItem>
+                  <ItemFinance>
+                    <RoundedItem width={'30'} height={'30'}>
+                      
+                    </RoundedItem>
+                    <span>Nubank</span>
+                  </ItemFinance>
+                  <ItemFinance>
+                    <RoundedItem width={'30'} height={'30'}>
+                      
+                    </RoundedItem>
+                    Teddy Investimentos
+                  </ItemFinance>
+                  <ItemFinance>
+                    27/07/2021
+                  </ItemFinance>
+                  <ItemFinance>
+                    <BoxRounded width={'150'} height={'32'} background={'#e07126'}></BoxRounded>
+                  </ItemFinance>
+                  <ItemFinance>
+                    <RoundedItem width={'30'} height={'30'}></RoundedItem>
+                  </ItemFinance>
+                </ItemBoxItem>
+                <ItemBoxItem>
+                  <ItemFinance>
+                    <RoundedItem width={'30'} height={'30'}>
+                      
+                    </RoundedItem>
+                    <span>Nubank</span>
+                  </ItemFinance>
+                  <ItemFinance>
+                    <RoundedItem width={'30'} height={'30'}>
+                      
+                    </RoundedItem>
+                    Teddy Investimentos
+                  </ItemFinance>
+                  <ItemFinance>
+                    27/07/2021
+                  </ItemFinance>
+                  <ItemFinance>
+                    <BoxRounded width={'150'} height={'32'} background={'#e07126'}></BoxRounded>
+                  </ItemFinance>
+                  <ItemFinance>
+                    <RoundedItem width={'30'} height={'30'}></RoundedItem>
+                  </ItemFinance>
+                </ItemBoxItem>
+              </BoxOpenFinanceItems>
+              <Row content={'space-between'} padding={'20px 0'}>
                 <Row>
                   <span>Resultados:</span>
-                  <select>
+                  <SelectItem>
                     <option>1-10</option>
                     <option>2-10</option>
                     <option>3-10</option>
@@ -99,7 +158,7 @@ const Main = () => {
                     <option>8-10</option>
                     <option>9-10</option>
                     <option>10-10</option>
-                  </select>
+                  </SelectItem>
                   <span>De 16</span>
                 </Row>
                 <Row>
@@ -111,14 +170,14 @@ const Main = () => {
                 
               </Row>
               <Row content={'flex-end'}>
-                <Button>Agendar com outra instituição</Button>
+                <Button background={'#007bff'}>Agendar com outra instituição</Button>
               </Row>
             </BoxInfo>
         </Layer>
         <MainStyle>
             <Row content={'space-between'}>
               <Column width={'30%'}>
-                   <h2>Informações da Solicitação</h2>
+                   <Title>Informações da Solicitação</Title>
                    <List>
                       <li>
                         <span><strong>Título da soliitação:</strong> { data[0].solicitacao }</span>
@@ -139,11 +198,13 @@ const Main = () => {
               </Column>
               <DocumentsBox> 
                   <Row content={'flex-end'}>
-                    <Button onClick={openModal}>Aceitar Open Finance</Button> 
-                    <ButtonRounded></ButtonRounded> 
+                    <Button onClick={openModal} background={'#e07126'}>Aceitar Open Finance</Button> 
+                    <ButtonRounded>
+                      <i class="fas fa-question"></i>
+                    </ButtonRounded> 
                   </Row>
                   <Column>
-                    <h2>Documentos Solicitados</h2>
+                    <Title>Documentos Solicitados</Title>
                     <BoxItemsStatus>
                         <WrapperItem>
                             <span>Documento</span>
@@ -158,22 +219,31 @@ const Main = () => {
                                           <span>{item.nome}</span>
                                           {
                                              item.status === 0 && (
-                                                <StatusItem background={'red'}>
-                                                  ok
+                                                <StatusItem background={'#b21f2d'}>
+                                                  <IconStatusItem>
+                                                    <i class="fas fa-exclamation-circle"></i>
+                                                  </IconStatusItem>
+                                                  A validar
                                                 </StatusItem>
                                              )
                                           }
                                           {
                                              item.status === 1 && (
-                                                <StatusItem background={'orange'}>
-                                                  ok
+                                                <StatusItem background={'#c69500'}>
+                                                  <IconStatusItem>
+                                                    <i class="fas fa-exclamation"></i>
+                                                  </IconStatusItem>
+                                                  Pendente
                                                 </StatusItem>
                                              )
                                           }
                                           {
                                              item.status === 2 && (
-                                                <StatusItem background={'green'}>
-                                                  ok
+                                                <StatusItem background={'#1c7430'}>
+                                                  <IconStatusItem>
+                                                    <i class="fas fa-check"></i>
+                                                  </IconStatusItem>
+                                                  Validado
                                                 </StatusItem>
                                              )
                                           }
