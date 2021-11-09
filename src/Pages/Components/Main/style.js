@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Layer = styled.div`
    
     width: 100%;
-    height: 140%;
+    height: 160%;
     background-color: rgba(0,0,0,0.5);
     position: absolute;
     left: 0;
@@ -12,6 +12,12 @@ export const Layer = styled.div`
     z-index: 999999;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 900px){
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
 
 `
 
@@ -27,6 +33,13 @@ export const BoxInfo = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); 
+
+    @media (max-width: 900px){
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      padding: 20px;
+    }
 
 `
 
@@ -84,11 +97,21 @@ export const WrapperAjust = styled.div`
    padding-bottom: 10px;
    border-bottom: 1px solid  #ede8e6;
 
+   @media (max-width: 900px){
+    padding: ${(props) => props.paddingMobile};
+    margin-top: 0;
+    border-bottom: 0;
+   }
+
 `
 
 export const InfoText = styled.h4`
 
    color: #1c3b7a;
+
+   @media (max-width: 900px){
+     font-size: 7px;
+   }
 
 `
 
@@ -101,6 +124,10 @@ export const InfoItem = styled.div`
    justify-content: space-between;
    align-items: center;
 
+   @media (max-width: 900px){
+     width: 20%;
+   }
+
 ` 
 
 export const ItemBoxItem = styled.div`
@@ -110,6 +137,8 @@ export const ItemBoxItem = styled.div`
   display: flex;
   flex-direction: row;
   border-radius: 10px;
+
+  
   
 
 `
@@ -122,6 +151,11 @@ export const ItemFinance = styled.div`
    flex-direction: row;
    align-items: center;
    color: #1c3b7a;
+
+   @media (max-width: 900px){
+     width: 20%;
+     flex-wrap: wrap;
+   }
    
 `
 
@@ -223,6 +257,11 @@ export const IconStatusItem = styled.div`
       top: 50%;
       transform: translate(-50%, -50%);
    }
+  
+   @media (max-width: 900px){
+     width: 30px;
+     height: 30px;
+   }
 
 `
 
@@ -248,6 +287,12 @@ export const ButtonNavigation = styled.button`
      cursor: pointer;
    }
 
+   @media (max-width: 900px){
+     width: 100px;
+     font-size: 10px;
+     margin: 0 5px;
+   }
+
 `
 
 export const ButtonRoundedPagination = styled.div`
@@ -271,6 +316,12 @@ export const ButtonRoundedPagination = styled.div`
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 900px){
+      width: 20px;
+      height:20px;
+      font-size: 10px;
     }
 
 `

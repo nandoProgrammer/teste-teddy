@@ -22,8 +22,9 @@ export const Row = styled.div`
    align-items: ${(props) => props.align};
 
    @media (max-width: 900px){
-      width: 100%;
-      flex-direction: ${(props) => props.mobile}
+      width: auto;
+      flex-direction: ${(props) => props.mobile};
+      justify-content: ${(props) => props.mobileDirection}
    }
 
 `
@@ -43,6 +44,7 @@ export const Column = styled.div`
       width: 100%;
       flex-direction: ${(props) => props.mobile};
       border-left: none;
+      text-align:center;
    }
 
 `
@@ -65,6 +67,15 @@ export const RoundedItem = styled.div`
       transform: translate(-50%, -50%);
    }
 
+   @media (max-width: 900px){
+      width: 40px;
+      height: 40px;
+
+      i{
+         font-size: 20px;
+      }
+   }
+
 `
 
 export const RoundedItemImage = styled.div`
@@ -78,6 +89,11 @@ export const RoundedItemImage = styled.div`
    background-position: center;
    margin-right: 10px;
    position: relative;
+
+   @media (max-width: 900px){
+      width: 20px;
+      height: 20px;
+   }
    
 `
 
@@ -95,6 +111,24 @@ export const BoxRounded = styled.div`
 
    span{
       font-size: 12px;
+   }
+
+   @media (max-width: 900px){
+     width: 40px;
+     height: 40px;
+     padding: 0;
+     position: relative;
+
+     i{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+     }
+
+     span{
+        display: none;
+     }
    }
 
 `;
@@ -166,6 +200,10 @@ export const LineVertical = styled.div`
    border-radius: 60px;
    height: ${(props) => props.height};
    margin: ${(props) => props.margin};
+
+   @media (max-width: 900px){
+      display: none;
+   }
     
 
 `
@@ -174,6 +212,11 @@ export const SpanStyle = styled.span`
 
    color: ${(props) => props.color};
    font-weight: ${(props) => props.weight};
+
+   @media (max-width: 900px){
+      display: ${(props) => props.mobileDisplay};
+      font-size: 6px;
+   }
 
 ` 
 

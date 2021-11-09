@@ -71,7 +71,7 @@ const Main = () => {
               <BoxOpenFinanceItems>
                 <h4>Buscar por nome</h4>
                 <InputSearch placeholder='Digite o nome da instituição'/>
-                <WrapperAjust widthValue={'100%'} margin={'0 10px'}>
+                <WrapperAjust widthValue={'100%'} margin={'0 10px'} paddingMobile={'0'}>
                    <InfoItem widthValue={'20%'}>
                      <InfoText>Remetente</InfoText>
                      <LineVertical height={'20px'}/>
@@ -153,7 +153,7 @@ const Main = () => {
               </BoxOpenFinanceItems>
               <RowNavModal content={'space-between'} padding={'20px 0'}>
                 <Row align={'center'}>
-                  <SpanStyle color={'#cecece'}>Resultados:</SpanStyle>
+                  <SpanStyle color={'#cecece'} mobileDisplay={'none'}>Resultados:</SpanStyle>
                   <SelectItem>
                     <option>1-10</option>
                     <option>2-10</option>
@@ -166,7 +166,7 @@ const Main = () => {
                     <option>9-10</option>
                     <option>10-10</option>
                   </SelectItem>
-                  <SpanStyle>De 16</SpanStyle>
+                  <SpanStyle mobileDisplay={'none'}>De 16</SpanStyle>
                 </Row>
                 <Row align={'center'}>
                   <ButtonNavigation status={false}> <i class="fas fa-chevron-left"></i> Anterior </ButtonNavigation>
@@ -175,7 +175,7 @@ const Main = () => {
                   <ButtonNavigation status={true}> Próximo <i class="fas fa-chevron-right"></i> </ButtonNavigation>
                 </Row>
               </RowNavModal>
-              <Row content={'flex-end'}>
+              <Row content={'flex-end'} mobile={'center'} mobileDirection={'center'}>
                 <Button background={'#1c3b7a'}>Agendar com outra instituição</Button>
               </Row>
             </BoxInfo>
@@ -203,7 +203,7 @@ const Main = () => {
                    </List>
               </Column>
               <Column widthValue={'70%'} padding={'2% 0 0 2%'} borderLeft={'1px solid #ede8e6'}> 
-                  <Row content={'flex-end'} align={'center'}>
+                  <Row content={'flex-end'} align={'center'} mobileDirection={'center'}>
                     <Button onClick={openModal} background={'#e07126'}>Aceitar Open Finance</Button> 
                     <ButtonRounded>
                       <i class="fas fa-question"></i>
@@ -214,7 +214,7 @@ const Main = () => {
                     <Column padding={'30px 0 0 0'}>
                         <WrapperAjust widthValue={'100%'} padding={'0 110px 0 30px'}>
                             <InfoText>Documento</InfoText>
-                            <Row align={'center'}>
+                            <Row align={'center'} widthMobile={'auto'}>
                               <LineVertical height={'20px'} margin={'0 10px 0 0'} />
                               <InfoText>Status</InfoText>
                             </Row>
