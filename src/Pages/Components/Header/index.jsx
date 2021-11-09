@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <HeaderTop>
             <Row align={'center'} mobile={'row'}>
-                <RoundedItem width={'75'} height={'75'} background={'#e07126'}>
+                <RoundedItem widthValue={'75'} height={'75'} background={'#e07126'}>
                    <i class="fas fa-file-alt"></i>
                 </RoundedItem>
                 <div>
@@ -15,9 +15,7 @@ const Header = () => {
                     <SubTitle>Visualize e envie a documentação solicitada</SubTitle>
                 </div>
             </Row>
-            
             <img width="150" height="auto" src="https://teddydigital.io/wp-content/uploads/2021/05/Logo-teddy-360.png" alt=""/> 
-            
         </HeaderTop>
     )
 }

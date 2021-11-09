@@ -74,12 +74,15 @@ export const BoxOpenFinanceItems = styled.div`
 
 export const WrapperAjust = styled.div`
    
-   width: ${(props) => props.width};
+   width: ${(props) => props.widthValue};
    padding: ${(props) => props.padding};
    display: flex;
    flex-direction: row;
    justify-content: space-between;
    margin-top: 40px;
+   margin-bottom: 20px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid  #ede8e6;
 
 `
 
@@ -91,7 +94,7 @@ export const InfoText = styled.h4`
 
 export const InfoItem = styled.div`
 
-   width: ${(props)=> props.width};
+   width: ${(props)=> props.widthValue};
    padding: 10px 0 0 15px;
    display: flex;
    flex-direction: row;
@@ -113,13 +116,12 @@ export const ItemBoxItem = styled.div`
 
 export const ItemFinance = styled.div`
   
-   width: ${(props)=> props.width};
+   width: ${(props)=> props.widthValue};
    padding: 10px;
    display: flex;
    flex-direction: row;
    align-items: center;
    color: #1c3b7a;
-   
    
 `
 
@@ -231,14 +233,19 @@ export const ButtonNavigation = styled.button`
    display: flex;
    flex-direction: row;
    justify-content: space-between;
-   max-width: 121px;
    border: 0;
    border-radius: 20px;
    background: none;
    align-items: center;
+   font-size: 17px;
+   color: ${(props) => props.status ? '#e07126' : '#cecece'};
 
    i{
      margin: 0 10px;
+   }
+
+   &:hover{
+     cursor: pointer;
    }
 
 `
@@ -251,14 +258,19 @@ export const ButtonRoundedPagination = styled.div`
     background-color: ${(props) => props.status ? '#e07126' : '#cecece'};
     color: ${(props) => props.status ? '#fff' : '#000'};
     margin-right: 10px;
-    padding: 10px 20px;
-    border: 0;
-    align-items: center;
+    position: relative;
 
 
     &:hover{
       opacity: 0.5;
       cursor: pointer;
+    }
+
+    span{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
 
 `
@@ -268,19 +280,21 @@ export const RowNavModal = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: ${(props) => props.content};
-    width: ${(props) => props.width};
+    width: ${(props) => props.widthValue};
     padding: ${(props) => props.padding};
     align-items: ${(props) => props.align};
     border-top: 1px solid #ede8e6;
     border-bottom: 1px solid #ede8e6;
     margin: 20px 0;
 
-    @media (max-width: 600px){
+    @media (max-width: 900px){
       width: 100%;
       flex-direction: ${(props) => props.mobile};
       padding: 0;
     }
 
 `
+
+
 
 
