@@ -4,7 +4,6 @@ import {
   MainStyle, 
   BoxInfo, 
   CloseBoxInfo, 
-  DocumentsBox, 
   WrapperItem, 
   BoxOpenFinanceItems,
   Layer, 
@@ -19,7 +18,9 @@ import {
   StatusItem,
   IconStatusItem, 
   List,
-  ButtonNavigation
+  ButtonNavigation,
+  ButtonRoundedPagination,
+  RowNavModal
 } from './style';
 
 import { 
@@ -28,6 +29,7 @@ import {
    Button,  
    ButtonRounded, 
    RoundedItem,
+   RoundedItemImage,
    BoxRounded, 
    Title, 
    SubTitle, 
@@ -53,8 +55,8 @@ const Main = () => {
             <BoxInfo>
               <Row content={'space-between'}>
                 <Row align={'center'}>
-                  <RoundedItem width={'70'} height={'70'}>
-                  <i class="fas fa-database"></i>
+                  <RoundedItem width={'70'} height={'70'} background={'#e07126'}>
+                     <i class="fas fa-database"></i>
                   </RoundedItem>
                   <div>
                       <Title>Open Finance</Title>
@@ -69,97 +71,53 @@ const Main = () => {
                 <h4>Buscar por nome</h4>
                 <InputSearch placeholder='Digite o nome da instituição'/>
                 <WrapperAjust width={'100%'} margin={'0 10px'}>
-                   <InfoItem>
+                   <InfoItem width={'20%'}>
                      <InfoText>Remetente</InfoText>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
-                   <InfoItem>
+                   <InfoItem width={'35%'}>
                      <InfoText>Destinatário</InfoText>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
-                   <InfoItem>
+                   <InfoItem width={'20%'}>
                      <InfoText>Data da criação</InfoText>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
-                   <InfoItem>
+                   <InfoItem width={'15%'}>
                      <InfoText>Status</InfoText>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
-                   <InfoItem>
+                   <InfoItem width={'10%'}>
                      <InfoText>Ações</InfoText>
                    </InfoItem>
                 </WrapperAjust>
+                
                 <ItemBoxItem>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}>
+                  <ItemFinance width={'20%'}>
+                    <RoundedItemImage width={'50'} height={'50'} background={'https://media.glassdoor.com/sqll/827975/nubank-brasil-squareLogo-1621263640678.png'}>
                       
-                    </RoundedItem>
+                    </RoundedItemImage>
                     <span>Nubank</span>
                   </ItemFinance>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}>
+                  <ItemFinance width={'35%'}>
+                    <RoundedItemImage width={'50'} height={'50'} background={'https://teddydigital.io/wp-content/uploads/2019/12/teddy-open-banking.png'}>
                       
-                    </RoundedItem>
+                    </RoundedItemImage>
                     Teddy Investimentos
                   </ItemFinance>
-                  <ItemFinance>
+                  <ItemFinance width={'20%'}>
                     27/07/2021
                   </ItemFinance>
-                  <ItemFinance>
+                  <ItemFinance width={'15%'}>
                     <BoxRounded width={'150'} height={'32'} background={'#e07126'}></BoxRounded>
                   </ItemFinance>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}></RoundedItem>
+                  <ItemFinance width={'10%'}>
+                    <RoundedItem width={'50'} height={'50'} background={'#e07126'}></RoundedItem>
                   </ItemFinance>
                 </ItemBoxItem>
-                <ItemBoxItem>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}>
-                      
-                    </RoundedItem>
-                    <span>Nubank</span>
-                  </ItemFinance>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}>
-                      
-                    </RoundedItem>
-                    Teddy Investimentos
-                  </ItemFinance>
-                  <ItemFinance>
-                    27/07/2021
-                  </ItemFinance>
-                  <ItemFinance>
-                    <BoxRounded width={'150'} height={'32'} background={'#e07126'}></BoxRounded>
-                  </ItemFinance>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}></RoundedItem>
-                  </ItemFinance>
-                </ItemBoxItem>
-                <ItemBoxItem>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}>
-                      
-                    </RoundedItem>
-                    <span>Nubank</span>
-                  </ItemFinance>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}>
-                      
-                    </RoundedItem>
-                    Teddy Investimentos
-                  </ItemFinance>
-                  <ItemFinance>
-                    27/07/2021
-                  </ItemFinance>
-                  <ItemFinance>
-                    <BoxRounded width={'150'} height={'32'} background={'#e07126'}></BoxRounded>
-                  </ItemFinance>
-                  <ItemFinance>
-                    <RoundedItem width={'30'} height={'30'}></RoundedItem>
-                  </ItemFinance>
-                </ItemBoxItem>
+              
               </BoxOpenFinanceItems>
-              <Row content={'space-between'} padding={'20px 0'}>
+              <RowNavModal content={'space-between'} padding={'20px 0'}>
                 <Row align={'center'}>
                   <span>Resultados:</span>
                   <SelectItem>
@@ -177,20 +135,19 @@ const Main = () => {
                   <span>De 16</span>
                 </Row>
                 <Row align={'center'}>
-                  <ButtonNavigation> <i class="fas fa-chevron-left"></i> anterior </ButtonNavigation>
-                  <ButtonRounded />
-                  <ButtonRounded />
-                  <ButtonNavigation> próximo <i class="fas fa-chevron-right"></i> </ButtonNavigation>
+                  <ButtonNavigation> <i class="fas fa-chevron-left"></i> Anterior </ButtonNavigation>
+                  <ButtonRoundedPagination status={true}>1</ButtonRoundedPagination>
+                  <ButtonRoundedPagination status={false}>2</ButtonRoundedPagination>
+                  <ButtonNavigation> Próximo <i class="fas fa-chevron-right"></i> </ButtonNavigation>
                 </Row>
-                
-              </Row>
+              </RowNavModal>
               <Row content={'flex-end'}>
                 <Button background={'#1c3b7a'}>Agendar com outra instituição</Button>
               </Row>
             </BoxInfo>
         </Layer>
         <MainStyle>
-            <Row content={'space-between'}>
+            <Row content={'space-between'} mobile={'column'}>
               <Column width={'30%'} padding={'30px 0 0 0'}>
                    <Title>Informações da Solicitação</Title>
                    <List>

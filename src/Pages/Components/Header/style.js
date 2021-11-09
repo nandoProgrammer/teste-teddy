@@ -8,4 +8,8 @@ export const HeaderTop = styled.header`
     padding: 2% 0;
     border-bottom: 1px solid #ede8e6;
 
+    @media (max-width: 600px){
+        padding: 2% 4%;
+    }
+
 `

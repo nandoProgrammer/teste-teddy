@@ -5,6 +5,12 @@ export const Wrapper = styled.div`
    max-width: 1200px;
    margin: auto;
 
+   @media (max-width: 600px){
+      width: 100%;
+      padding: 2% 4%;
+   }
+  
+
 `
 
 export const Row = styled.div`
@@ -15,6 +21,12 @@ export const Row = styled.div`
    width: ${(props) => props.width};
    padding: ${(props) => props.padding};
    align-items: ${(props) => props.align};
+
+   @media (max-width: 600px){
+      width: 100%;
+      flex-direction: ${(props) => props.mobile};
+      padding: 0;
+   }
 
 `
 
@@ -29,6 +41,13 @@ export const Column = styled.div`
    padding: ${(props) => props.padding};
    border-left: ${(props) => props.borderLeft};
 
+   @media (max-width: 600px){
+      width: 100%;
+      flex-direction: ${(props) => props.mobile};
+      padding: 0;
+      border-left: none;
+   }
+
 `
 
 export const RoundedItem = styled.div`
@@ -36,7 +55,7 @@ export const RoundedItem = styled.div`
    width: ${(props) => props.width}px;
    height: ${(props) => props.height}px;
    border-radius: 50%;
-   background-color: #e07126;
+   background-color: ${(props) => props.background};
    margin-right: 10px;
    position: relative;
 
@@ -48,6 +67,28 @@ export const RoundedItem = styled.div`
       top: 50%;
       transform: translate(-50%, -50%);
    }
+
+   @media (max-width: 600px){
+      width: 40px;
+      height: 40px;
+
+      i{
+         font-size: 15px;
+      }
+   }
+
+`
+
+export const RoundedItemImage = styled.div`
+
+   width: ${(props) => props.width}px;
+   height: ${(props) => props.height}px;
+   border-radius: 50%;
+   background-image: url(${(props) => props.background});
+   background-size: cover;
+   background-position: center;
+   margin-right: 10px;
+   position: relative;
 
 `
 
@@ -104,6 +145,9 @@ export const ButtonRounded = styled.button`
 export const Title = styled.h2`
   
    color: #1c3b7a;
+   @media (max-width: 600px){
+      font-size: 15px;
+   }
 
 `
 
@@ -111,6 +155,11 @@ export const SubTitle = styled.h4`
 
    color: #878482;
    font-weight: 400;
+
+   @media (max-width: 600px){
+      font-size: 7px;
+      max-width: 110px;
+   }
 
 `
 
@@ -120,7 +169,13 @@ export const LineVertical = styled.div`
    background-color: #cecece;
    border-radius: 60px;
    height: ${(props) => props.height};
-   margin: ${(props) => props.margin}
+   margin: ${(props) => props.margin};
+
+
+   @media (max-width: 600px){
+      display: none;
+   }
+  
     
 
 `;

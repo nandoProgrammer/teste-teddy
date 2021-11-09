@@ -18,6 +18,17 @@ const data = [
                 nome: 'Balancete 2020',
                 status: 1
             },
+        ],
+        compartilhamentos: [
+            {
+                remetente: 'Nubank',
+                logoRemetente: '',
+                destinatário: 'Teddy',
+                logoDestinatario: '',
+                data: '',
+                status: 0,
+                acoes: 0,
+            }
         ]
     }
 ];
