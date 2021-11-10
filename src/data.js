@@ -26,8 +26,8 @@ const data = [
                 destinatario: 'Teddy Investimentos',
                 logoDestinatario: 'https://teddydigital.io/wp-content/uploads/2019/12/teddy-open-banking.png',
                 data: '27/07/2021',
-                status: 0,
-                acoes: 1,
+                status: 2,
+                acoes: 0,
             },
             {
                 remetente: 'Caixa Econômica',
@@ -35,7 +35,7 @@ const data = [
                 destinatario: 'Teddy Investimentos',
                 logoDestinatario: 'https://teddydigital.io/wp-content/uploads/2019/12/teddy-open-banking.png',
                 data: '15/07/2021',
-                status: 0,
+                status: 1,
                 acoes: 1,
             },
             {

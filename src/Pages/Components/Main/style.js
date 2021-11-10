@@ -105,7 +105,17 @@ export const WrapperAjust = styled.div`
 
 `
 
-export const InfoText = styled.h4`
+export const InfoText = styled.h3`
+
+  color: #1c3b7a;
+
+  @media (max-width: 900px){
+    font-size: 13px;
+  } 
+
+`
+
+export const InfoTextSmall = styled.h4`
 
    color: #1c3b7a;
 
@@ -237,8 +247,18 @@ export const StatusItem = styled.div`
   padding: 5px 35px;
   border-radius: 30px;
   background-color: ${(props) => props.background};
-  color: #fff;
   align-items: center;
+
+  span{
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @media (max-width: 900px){
+    span{
+      display: none;
+    }
+  }
 
 `
 
@@ -246,12 +266,11 @@ export const IconStatusItem = styled.div`
 
   width: 30px;
   height: 30px;
-  
   position: relative;
 
     i{
       font-size: 20px;
-      color: #cecece;
+      color: #fff;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -288,9 +307,9 @@ export const ButtonNavigation = styled.button`
    }
 
    @media (max-width: 900px){
-     width: 100px;
      font-size: 10px;
-     margin: 0 5px;
+     margin: 0 1px;
+     padding: 0;
    }
 
 `
@@ -322,6 +341,7 @@ export const ButtonRoundedPagination = styled.div`
       width: 20px;
       height:20px;
       font-size: 10px;
+      margin: 10px 5px;
     }
 
 `

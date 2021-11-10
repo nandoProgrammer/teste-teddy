@@ -10,6 +10,7 @@ import {
   InputSearch, 
   WrapperAjust,
   InfoText,
+  InfoTextSmall,
   ItemBoxItem,
   ItemFinance, 
   InfoItem,  
@@ -29,12 +30,14 @@ import {
    Button,  
    ButtonRounded, 
    RoundedItem,
+   RoundedItemStatus,
    RoundedItemImage,
    BoxRounded, 
    Title, 
    SubTitle, 
    LineVertical,
-   SpanStyle
+   SpanStyle,
+   SpaceMobile
 } from '../../styles';
 
 import data from '../../../data';
@@ -73,23 +76,23 @@ const Main = () => {
                 <InputSearch placeholder='Digite o nome da instituição'/>
                 <WrapperAjust widthValue={'100%'} margin={'0 10px'} paddingMobile={'0'}>
                    <InfoItem widthValue={'20%'}>
-                     <InfoText>Remetente</InfoText>
+                     <InfoTextSmall>Remetente</InfoTextSmall>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem widthValue={'35%'}>
-                     <InfoText>Destinatário</InfoText>
+                     <InfoTextSmall>Destinatário</InfoTextSmall>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem widthValue={'20%'}>
-                     <InfoText>Data da criação</InfoText>
+                     <InfoTextSmall>Data da criação</InfoTextSmall>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem widthValue={'15%'}>
-                     <InfoText>Status</InfoText>
+                     <InfoTextSmall>Status</InfoTextSmall>
                      <LineVertical height={'20px'}/>
                    </InfoItem>
                    <InfoItem widthValue={'10%'}>
-                     <InfoText>Ações</InfoText>
+                     <InfoTextSmall>Ações</InfoTextSmall>
                    </InfoItem>
                 </WrapperAjust>
                 {
@@ -110,7 +113,8 @@ const Main = () => {
                           {
                             item.status === 0 && (
                               <BoxRounded background={'rgb(178, 31, 45)'}>
-                                <i class="fas fa-exclamation-triangle"></i> <span>Desatualizado</span> 
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                <span>Desatualizado</span> 
                               </BoxRounded>
                             )
                           }
@@ -118,7 +122,8 @@ const Main = () => {
                           {
                             item.status === 1 && (
                               <BoxRounded widthValue={'150'} height={'32'} background={'rgb(198, 149, 0)'}>
-                                <i class="fas fa-exclamation-triangle"></i> <span>Inválido</span>
+                                <i class="fas fa-exclamation-triangle"></i> 
+                                <span>Inválido</span>
                               </BoxRounded>
                             )
                           }
@@ -126,7 +131,8 @@ const Main = () => {
                           {
                             item.status === 2 && (
                               <BoxRounded widthValue={'150'} height={'32'} background={'rgb(28, 116, 48)'}>
-                                <i class="fas fa-check"></i> <span>Atualizado</span>
+                                <i class="fas fa-check"></i> 
+                                <span>Atualizado</span>
                               </BoxRounded>
                             )
                           } 
@@ -135,16 +141,16 @@ const Main = () => {
                         <ItemFinance widthValue={'10%'}>
                           {
                             item.acoes === 0 && (
-                              <RoundedItem widthValue={'50'} height={'50'} background={'#cecece'}>
+                              <RoundedItemStatus widthValue={'50'} height={'50'} background={'#cecece'}>
                                 <i class="far fa-check-circle"></i>
-                              </RoundedItem>
+                              </RoundedItemStatus>
                             )
                           }
                           {
                             item.acoes === 1 && (
-                              <RoundedItem widthValue={'50'} height={'50'} background={'rgb(28,116,48)'}>
+                              <RoundedItemStatus widthValue={'50'} height={'50'} background={'rgb(28,116,48)'}>
                                 <i class="far fa-check-circle"></i>
-                              </RoundedItem>
+                              </RoundedItemStatus>
                             )
                           }
                         </ItemFinance>
@@ -209,10 +215,11 @@ const Main = () => {
                       <i class="fas fa-question"></i>
                     </ButtonRounded> 
                   </Row>
+                  <SpaceMobile />
                   <Column>
                     <Title>Documentos Solicitados</Title>
                     <Column padding={'30px 0 0 0'}>
-                        <WrapperAjust widthValue={'100%'} padding={'0 110px 0 30px'}>
+                        <WrapperAjust widthValue={'100%'} padding={'0 110px 0 30px'} paddingMobile={'0 14%'}>
                             <InfoText>Documento</InfoText>
                             <Row align={'center'} widthMobile={'auto'}>
                               <LineVertical height={'20px'} margin={'0 10px 0 0'} />
@@ -232,7 +239,7 @@ const Main = () => {
                                                   <IconStatusItem>
                                                     <i class="fas fa-exclamation-circle"></i>
                                                   </IconStatusItem>
-                                                  A validar
+                                                  <span>A validar</span>
                                                 </StatusItem>
                                              )
                                           }
@@ -242,7 +249,7 @@ const Main = () => {
                                                   <IconStatusItem>
                                                     <i class="fas fa-exclamation"></i>
                                                   </IconStatusItem>
-                                                  Pendente
+                                                  <span>Pendente</span>
                                                 </StatusItem>
                                              )
                                           }
@@ -252,7 +259,7 @@ const Main = () => {
                                                   <IconStatusItem>
                                                     <i class="fas fa-check"></i>
                                                   </IconStatusItem>
-                                                  Validado
+                                                  <span>Validado</span>
                                                 </StatusItem>
                                              )
                                           }

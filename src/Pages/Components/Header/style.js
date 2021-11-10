@@ -13,3 +13,17 @@ export const HeaderTop = styled.header`
     }
 
 `
+
+export const Logo = styled.img`
+
+  width: 150px;
+
+  &:hover{
+      cursor: pointer;
+  }
+
+  @media (max-width: 900px){
+      width: 100px;
+  }
+
+`

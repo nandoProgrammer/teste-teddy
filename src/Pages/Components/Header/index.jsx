@@ -1,9 +1,13 @@
 import React from 'react'
 
-import { HeaderTop } from './style'
+import { HeaderTop, Logo } from './style'
 import { Row, RoundedItem, Title, SubTitle} from '../../styles';
 
 const Header = () => {
+    const reload = () => {
+        window.location.href="#";
+    }
+
     return (
         <HeaderTop>
             <Row align={'center'} mobile={'row'}>
@@ -15,7 +19,7 @@ const Header = () => {
                     <SubTitle>Visualize e envie a documentação solicitada</SubTitle>
                 </div>
             </Row>
-            <img width="150" height="auto" src="https://teddydigital.io/wp-content/uploads/2021/05/Logo-teddy-360.png" alt=""/> 
+            <Logo src="https://teddydigital.io/wp-content/uploads/2021/05/Logo-teddy-360.png"  alt="" onClick={reload} /> 
         </HeaderTop>
     )
 }
