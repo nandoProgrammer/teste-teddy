@@ -48,6 +48,8 @@ const Main = () => {
     const openModal = () => {
        setModalStatus('block');
     }
+    
+    
 
     const closeModal = () => {
        setModalStatus('none');
