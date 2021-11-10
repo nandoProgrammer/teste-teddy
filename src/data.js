@@ -46,6 +46,15 @@ const data = [
                 data: '15/07/2021',
                 status: 0,
                 acoes: 1,
+            },
+            {
+                remetente: 'Itaú',
+                logoRemetente: 'https://logodownload.org/wp-content/uploads/2014/05/itau-logo-1.png',
+                destinatario: 'Teddy Investimentos',
+                logoDestinatario: 'https://teddydigital.io/wp-content/uploads/2019/12/teddy-open-banking.png',
+                data: '15/07/2021',
+                status: 0,
+                acoes: 1,
             }
         ]
     }

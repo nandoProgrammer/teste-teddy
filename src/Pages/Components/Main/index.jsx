@@ -44,16 +44,42 @@ import data from '../../../data';
 
 const Main = () => {
     const [modalStatus, setModalStatus] = useState('none');
+    const [dataFinance, setDataFinance] = useState(data[0].compartilhamentos.slice(0, 3));
+    const [buttonPaginationActive, setButtonPaginationActive] = useState(0);
 
     const openModal = () => {
        setModalStatus('block');
     }
-    
-    
 
     const closeModal = () => {
        setModalStatus('none');
     }
+
+    const buttonPaginationValidateActive = (buttonId) => {
+
+        return buttonId === buttonPaginationActive ? true : false;
+
+    }
+
+    const filterData = (value) => {
+           
+      let arrItems = [];
+
+      data[0].compartilhamentos.forEach((item, index) => {
+        if(index >= (value * 3) && index <= (value + 3) - 1){
+          arrItems.push(item);
+        }
+      });
+       
+      setDataFinance(arrItems);
+      setButtonPaginationActive(value);
+
+      buttonPaginationValidateActive(value);
+
+    }
+    
+    
+    
 
     return (
         <>
@@ -98,7 +124,7 @@ const Main = () => {
                    </InfoItem>
                 </WrapperAjust>
                 {
-                    data[0].compartilhamentos.map((item) =>(
+                    dataFinance.map((item) =>(
                       <ItemBoxItem>
                         <ItemFinance widthValue={'20%'}>
                           <RoundedItemImage widthValue={'50'} height={'50'} background={item.logoRemetente} />
@@ -177,10 +203,10 @@ const Main = () => {
                   <SpanStyle mobileDisplay={'none'}>De 16</SpanStyle>
                 </Row>
                 <Row align={'center'}>
-                  <ButtonNavigation status={false}> <i class="fas fa-chevron-left"></i> Anterior </ButtonNavigation>
-                  <ButtonRoundedPagination status={true}><span>1</span></ButtonRoundedPagination>
-                  <ButtonRoundedPagination status={false}><span>2</span></ButtonRoundedPagination>
-                  <ButtonNavigation status={true}> Próximo <i class="fas fa-chevron-right"></i> </ButtonNavigation>
+                  <ButtonNavigation status={buttonPaginationValidateActive(1)}  onClick={() => filterData(0)}> <i class="fas fa-chevron-left"></i> Anterior </ButtonNavigation>
+                  <ButtonRoundedPagination status={buttonPaginationValidateActive(0)} onClick={() => filterData(0)}><span>1</span></ButtonRoundedPagination>
+                  <ButtonRoundedPagination status={buttonPaginationValidateActive(1)} onClick={() => filterData(1)}><span>2</span></ButtonRoundedPagination>
+                  <ButtonNavigation status={buttonPaginationValidateActive(0)} onClick={() => filterData(1)}> Próximo <i class="fas fa-chevron-right"></i> </ButtonNavigation>
                 </Row>
               </RowNavModal>
               <Row content={'flex-end'} mobile={'center'} mobileDirection={'center'}>
