@@ -5,7 +5,7 @@ import { Row, RoundedItem, Title, SubTitle} from '../../styles';
 
 const Header = () => {
     const reload = () => {
-        window.location.href="#";
+        window.location.href="https://teddy-teste.netlify.app/";
     }
 
     return (
